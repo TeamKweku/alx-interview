@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module contains the pascal triangle function
 """
-
-
 def pascal_triangle(n):
-    """ """
+    """
+    Function that creates a pascal triangle based on the
+    length provided
+    """
     triangle = []
     for i in range(n):
         row = []
