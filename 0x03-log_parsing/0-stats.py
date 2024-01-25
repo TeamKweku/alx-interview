@@ -3,16 +3,15 @@
 a script that reads stdin line by line and computes metrics
 """
 import sys
-from typing import Dict
 
 
-total_file_size: int = 0
-number_of_lines: int = 0
-status_codes: list = [200, 301, 400, 401, 404, 403, 405, 500]
-status_code_dict: Dict[int, int] = {}
+total_file_size = 0
+number_of_lines = 0
+status_codes = [200, 301, 400, 401, 404, 403, 405, 500]
+status_code_dict = {}
 
 
-def print_statistics() -> None:
+def print_statistics():
     """
     Print the computed statistics including total file size and
     number of lines by status code.
@@ -26,10 +25,10 @@ def print_statistics() -> None:
 try:
     for line in sys.stdin:
         try:
-            file_size: int = int(line.split()[-1])
+            file_size = int(line.split()[-1])
             total_file_size += file_size
 
-            status_code: int = int(line.split()[-2])
+            status_code = int(line.split()[-2])
 
             if status_code in status_codes:
                 if status_code in status_code_dict:
